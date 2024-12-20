@@ -150,7 +150,7 @@ router.get('/vnpay_return', async (req, res) => {
       `
 
       const mailOptions = {
-        from: 'trafdual0810@gmail.com',
+        from: 'ducbinhnguyennd@gmail.com',
         to: order.email, // Email của người đặt
         subject: 'Xác nhận thanh toán hóa đơn mua laptop',
         html: `
@@ -166,10 +166,10 @@ router.get('/vnpay_return', async (req, res) => {
       await hoadon.save()
       await transporter.sendMail(mailOptions)
 
-      res.redirect('http://localhost:3000')
+      res.redirect('http://localhost:3000/thanhcong')
     }
   } else {
-    res.redirect('http://localhost:3000')
+    res.redirect('http://localhost:3000/thanhcong')
   }
 })
 
